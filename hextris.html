@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hextris — solosGamehub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:ui-monospace,Menlo,Consolas,monospace;}
+    body{height:100vh;background:#05050a;color:#e9e9ff;display:flex;flex-direction:column;}
+    header{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);}
+    .left{display:flex;gap:10px;align-items:center;}
+    .badge{padding:6px 10px;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:rgba(255,255,255,.06);font-size:12px;}
+    .btn{cursor:pointer;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#e9e9ff;padding:8px 10px;border-radius:10px;font-size:12px;}
+    .btn:hover{background:rgba(255,255,255,.10);}
+    .btn.primary{border-color:rgba(120,170,255,.75);background:rgba(90,120,255,.18);}
+    .wrap{flex:1;display:flex;flex-direction:column;}
+    .note{padding:10px 14px;font-size:12px;opacity:.75;line-height:1.45}
+    iframe{flex:1;width:100%;border:0;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left">
+      <div class="badge">Hextris</div>
+      <div class="badge" style="opacity:.7;">Esc = Back</div>
+    </div>
+    <div class="right">
+      <button class="btn" onclick="location.href='games.html'">Back</button>
+      <button class="btn primary" onclick="window.open('https://hextris.io','_blank')">Open game directly</button>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="note">If it doesn’t appear below, use <b>Open game directly</b>.</div>
+    <iframe src="https://hextris.io" title="Hextris"></iframe>
+  </div>
+
+  <script>
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") location.href = "games.html";
+    });
+  </script>
+</body>
+</html>
